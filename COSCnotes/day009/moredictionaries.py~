@@ -1,0 +1,16 @@
+# moredictionaries.py
+# Bill Kronholm
+# 2015
+# 
+# Demostrates some basic dictionary comprehensions.
+
+#mydict = { x: x**3 for x in [1,4,7]}
+#print mydict
+
+fruitList = ['apple', 'banana', 'grape', 'orange', 'kiwi', 'grape']
+
+fruitDict = {name: index for index, name in enumerate(fruitList)}
+print fruitDict['grape']
+
+#sameFruitDict = dict(enumerate(fruitList)) # convert a list to a dicitonary
+#print sameFruitDict

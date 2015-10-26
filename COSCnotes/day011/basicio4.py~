@@ -1,0 +1,8 @@
+# basicio4.py
+# Bill Kronholm
+# 2015
+#
+# This program will overwrite itself.
+
+thisfile = open('basicio4.py', 'w')
+thisfile.close()

@@ -1,0 +1,81 @@
+#!/usr/bin python
+
+# simple script to select group of students at random.
+# Written by Bill Kronholm
+# Sep 1, 2014
+# No rights reserved.
+
+from random import shuffle
+from time import strftime
+import subprocess # used for printing
+
+# list of students names as strings
+students = [
+    "Karmen Rosebrock",
+    "Erna Halm",
+    "Krystle Poage",
+    "Dori Renick",
+    "Scot Mayr",
+    "Kenyetta Fyock",
+    "Nicola Wind",
+    "Janee Garibaldi",
+    "Dot Tinkham",
+    "Kathy Christian",
+    "Kym Costigan",
+    "Sharolyn Rondon",
+    "Samira Poudrier",
+    "Cythia Licon",
+    "Madelene Sherry",
+    "Ignacia Riemann",
+    "Vince Edmundson",
+    "Sharyl Buch",
+    "Mayola Balk",
+    "Leonia Simek"
+]
+
+groupsize = 3 # how many people in each group
+numberofstudents = len(students)
+numberofgroups = numberofstudents/groupsize
+
+groups = {n:[] for n in range(numberofgroups)}
+
+shuffle(students) # randomize the list
+
+n=0
+# separate into groups
+while len(students) > 0:
+    groups[n].append(students.pop(0))
+    n = (n+1)%numberofgroups
+
+# txt file to save to
+today = strftime("%Y%m%d")
+f = open(today+".txt", 'w')
+
+
+# print them out and save to txt file
+for key in groups.keys():
+    print "Group", key
+    f.write("Group "+str(key)+"\n")
+    for x in groups[key]:
+        f.write(x+"\n")
+        print x
+    f.write("\n")
+    print ""
+
+# close the txt file    
+f.close()
+
+# open the txt file for reading
+f = open(today+".txt", 'r')
+
+# print the txt file
+# code taken from 
+# http://stackoverflow.com/questions/12723818/print-to-standard-printer-from-python
+lpr = subprocess.Popen("/usr/bin/lpr", stdin = subprocess.PIPE)
+lpr.stdin.write(f.read())
+
+# close the txt file again
+f.close()
+
+print "Done. Go check the printer."
+

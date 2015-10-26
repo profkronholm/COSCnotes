@@ -1,0 +1,161 @@
+% !TEX TS-program = pdflatex
+% !TEX encoding = UTF-8 Unicode
+
+% This is a simple template for a LaTeX document using the "article" class.
+% See "book", "report", "letter" for other types of document.
+
+\documentclass[11pt]{article} % use larger type; default would be 10pt
+
+\usepackage[utf8]{inputenc} % set input encoding (not needed with XeLaTeX)
+
+%%% Examples of Article customizations
+% These packages are optional, depending whether you want the features they provide.
+% See the LaTeX Companion or other references for full information.
+
+%%% PAGE DIMENSIONS
+\usepackage[letterpaper, margin=1in]{geometry} % to change the page dimensions
+%\geometry{a4paper} % or letterpaper (US) or a5paper or....
+% \geometry{margins=2in} % for example, change the margins to 2 inches all round
+% \geometry{landscape} % set up the page for landscape
+%   read geometry.pdf for detailed page layout information
+
+\usepackage{graphicx} % support the \includegraphics command and options
+
+
+\usepackage{xcolor} % used for background color for code
+\usepackage{menukeys} % for \cmd that looks like ⌘
+
+% \usepackage[parfill]{parskip} % Activate to begin paragraphs with an empty line rather than an indent
+
+%%% PACKAGES
+\usepackage{booktabs} % for much better looking tables
+\usepackage{array} % for better arrays (eg matrices) in maths
+\usepackage{paralist} % very flexible & customisable lists (eg. enumerate/itemize, etc.)
+\usepackage{verbatim} % adds environment for commenting out blocks of text & for better verbatim
+\usepackage{subfig} % make it possible to include more than one captioned figure/table in a single float
+% These packages are all incorporated in the memoir class to one degree or another...
+\usepackage{listings} % for writing code blocks
+
+
+
+%%% HEADERS & FOOTERS
+\usepackage{fancyhdr} % This should be set AFTER setting up the page geometry
+\pagestyle{fancy} % options: empty , plain , fancy
+\renewcommand{\headrulewidth}{0pt} % customise the layout...
+\lhead{}\chead{}\rhead{}
+\lfoot{}\cfoot{\thepage}\rfoot{}
+
+%%% SECTION TITLE APPEARANCE
+\usepackage{sectsty}
+\allsectionsfont{\rmfamily\upshape} % (See the fntguide.pdf for font help)
+%\setcounter{section}{-1}
+% (This matches ConTeXt defaults)
+
+%%% ToC (table of contents) APPEARANCE
+\usepackage[nottoc,notlof,notlot]{tocbibind} % Put the bibliography in the ToC
+\usepackage[titles,subfigure]{tocloft} % Alter the style of the Table of Contents
+\renewcommand{\cftsecfont}{\rmfamily\mdseries\upshape}
+\renewcommand{\cftsecpagefont}{\rmfamily\mdseries\upshape} % No bold!
+
+\usepackage{hyperref}
+
+\definecolor{codegray}{gray}{0.9}
+\newcommand{\code}[1]{\colorbox{codegray}{\texttt{#1}}}
+\newcommand{\keyboard}[1]{{\sc{#1}}}
+%%% END Article customizations
+
+
+
+%%% The "real" document content comes below...
+
+\title{Setting up Python}
+\author{Bill Kronholm}
+\date{} % Activate to display a given date or no date (if empty),
+         % otherwise the current date is printed 
+
+\begin{document}
+\maketitle
+
+This guide will step you through installing Python 2.7 on your system as well as a text editor with nice highlighting features to make writing your programs a little easier.
+The steps you need to take vary based on the system you are using.
+
+\section{Accessing the terminal window}
+\subsection{Linux} Press \keyboard{ctrl-alt-t} and a terminal window will open.
+You should be in the home directory of the current user and see \code{username@machine:$\sim$\$~} or something similar.
+
+Type \code{exit} and press \keyboard{Enter} to close the terminal window.
+
+\subsection{Windows} There is no hot-key for getting the terminal window to open, so we will create one.
+Hit the \keyboard{start} button and type \code{cmd}.
+You should see the \code{cmd.exe} program appear at the top of the list.
+Right-click on \code{cmd.exe} and select ``Pin to Start Menu.''
+(If this is not an option, the it is already pinned to the start menu.)
+Close the start menu.
+
+Now reopen the start menu, right-click on ``Windows Command Processor,'' and select ``Properties.''
+In the ``Start in'' field, enter the following: \code{\%HOMEPATH\%}.
+Next, click in the ``Shortcut key'' field, and press \keyboard{ctrl-alt-t}.
+Click ``Apply,'' then click ``OK.''
+
+Now press \keyboard{ctrl-alt-t} and you should see a terminal window which displays \code{C:\textbackslash Users\textbackslash username>} or something similar.
+
+Type \code{exit} and press \keyboard{Enter} to close the terminal window.
+
+(Note: You could also hit the \keyboard{Start} key, type \code{cmd}, and hit \keyboard{Enter}, but this will not take you to your home directory by default.)
+
+\subsection{Mac OS X}
+
+Press \keyboard{\cmd-space} to open Spotlight, then hit \keyboard{Enter}.
+A terminal window should appear and you should be in your home directory.
+
+Type \code{exit} and press \keyboard{Enter} to close the terminal window.
+
+\section{Installing Python 2.7}
+\subsection{Linux}
+Linux distributions ship with Python 2.7 already installed.
+To check what version you are using, open a terminal window and type \code{python --version} and hit \keyboard{Enter}.
+You should see it says \code{Python 2.7.X}.
+
+\subsection{Windows}
+Visit \href{https://www.python.org/downloads/release/python-2710/}{https://www.python.org/downloads/release/python-2710/} and choose the correct download link.
+(It will be either be ``Windows x86-64 MSI installer'' if you are on a 64-bit machine, or else ``Windows x86 MSI installer'' if you are on a 32-bit machine.)
+If prompted, select the option that allows you to save the file.
+(But probably it will save automatically.)
+Find the file and run it.
+Follow the prompts to install for all users.
+Select the default directory of \code{C:\textbackslash Python27\textbackslash}.
+On the ``Customize'' page, scroll down to make sure that ``Add python.exe to Path'' will be installed.
+If you are prompted for permission to install, allow the machine to do so.
+Now just wait.
+
+When it's done, open a terminal window and type \code{python --version} and hit \keyboard{Enter}.
+You should get a response that says \code{Python 2.7.10}.
+
+\subsection{Mac OS X}
+Mac OS X comes with a version of python, but it's not what we want to use.
+Instead, go to \href{https://www.python.org/downloads/release/python-2710/}{https://www.python.org/downloads/release/python-2710/}.
+Click the ``Mac OS X 64-bit/32-bit installer'' and follow the prompts to install it.
+(I can't help much more than this as I do not have a Mac to test this on.)
+
+Once it is installed, open a terminal window and type \code{python --version} and hit \keyboard{Enter}.
+You should get a response that says \code{Python 2.7.10}.
+
+
+\section{Setting up a text editor}
+The actual text editor you use is completely irrelevant and can be anything you'd like.
+I recommend starting with gedit: \href{https://wiki.gnome.org/Apps/Gedit}{https://wiki.gnome.org/Apps/Gedit}.
+Click ``Download'' and select the appropriate link for your operating system.
+Choose the latest version and download the installation file.
+Open it and follow the installation prompts on your screen.
+
+Once gedit is installed, open it.
+From the ``Edit'' menu, select ``Preferences.''
+In the ``View'' tab, make sure ``Display line numbers'' is checked.
+Check the box for ``Display right margin at column:'' and set the value to 79.
+Switch to the ``Editor'' tab and check the box for ``Enable automatic indentation.''
+Then click ``Close.''
+
+You should now be staring at a blank document.
+
+
+\end{document}

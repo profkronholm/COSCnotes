@@ -1,0 +1,5 @@
+But all I get is this.
+I want this text in my file.
+Followed by this line of text.
+I want this text in my file.
+Followed by this line of text.

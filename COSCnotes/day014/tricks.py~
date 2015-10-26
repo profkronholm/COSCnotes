@@ -1,0 +1,65 @@
+# tricks.py
+# Bill Kronholm
+# 2015
+#
+# Demostrates some useful tricks
+
+
+# swap two values, long way
+#a = 1
+#b = 2
+##a = b
+##b = a
+#c = a
+#a = b
+#b = c
+#print a, b
+
+## swap two values, easy way
+#a = 1
+#b = 2
+#a, b = b, a
+#print a, b
+
+## reverse a list
+#a = [1, 2, 3, 4, 5, 6]
+#b = a[::-1] # copy of list. a is not changed. see slices below
+#print a
+#print b
+#a.reverse() # changes a to be reversed.
+#print a
+
+## works for strings, too
+#x = 'supercalifragilisticexpialidocious'
+#y = x[::-1]
+#print y
+#x = x[::-1]
+
+# unpacking
+#a, b, c, d = [1, 2, 3, 4]
+#print a, b, c, d
+
+## list slice with step. Syntax is a[start:end:step]
+#a = range(12)
+#print a[2::3]
+##print a
+
+## zipping lists
+#a = [1, 2, 3, 4, 5]
+#b = ['a', 'b', 'c', 'd', 'e']
+#c = range(5)
+#print zip(a,b,c)
+
+## functions can be declared to have default values
+
+def combinethese(a, b = 0, c = 0):
+   return a + 2*b + 3*c
+   
+print combinethese(a = 2, b = 3, c = 4) # 20
+print combinethese(2, 3) # 8
+print combinethese(2) # 2
+print combinethese(2, c = 4) # 14
+
+print combinethese(b = 3, c = 4, a = 2)
+
+print combinethese(a = 2, 3, 4)

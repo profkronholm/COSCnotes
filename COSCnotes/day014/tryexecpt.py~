@@ -1,0 +1,36 @@
+# tryexcept.py
+# Bill Kronholm
+# 2015
+#
+# Demonstrates some basic usage of the try/except methods.
+
+#userinput = raw_input('Please enter an integer: ')
+#userinteger = int(userinput)
+#print userinteger, 'is my favorite number.'
+
+# if the user does not enter an input appropriate for int(), then python
+# raises a ValueError
+
+userinput = raw_input('Please enter an integer: ')
+try:
+    userinteger = int(userinput)
+    print userinteger, 'is my favorite number.'
+except ValueError: # only catches this specific type of error
+    print 'I cannot convert that to an integer'
+finally:
+    print 'Goodbye.'
+    
+
+# This code block will keep prompting the user for input until valid input
+# is entered.
+#while True:
+#    try:
+#        userinput = raw_input('Please enter an integer: ')
+#        userinteger = int(userinput)
+#        break # get out of while loop
+#    except: # if there is any error at all
+#        print 'I think your input was invalid.'
+#    
+#print userinteger, 'is my favorite number.'
+
+

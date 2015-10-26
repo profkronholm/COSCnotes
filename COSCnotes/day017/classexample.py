@@ -1,0 +1,34 @@
+# classexample.py
+# Bill Kronholm
+# 2015
+#
+# Sample code to show how classes are created and used.
+#
+
+class Point:
+    def __init__(self, x=0.0, y=0.0):
+        self.x = float(x)
+        self.y = float(y)
+    def magnitude(self):
+        return (self.x**2 + self.y**2)**0.5
+
+def distance(P,Q):
+    """
+    expects Point objects P and Q.
+    returns the Euclidean distance between the points
+    """
+    sqdist = (P.x - Q.x)**2 + (P.y - Q.y)**2
+    return sqdist**0.5
+
+P = Point()
+Q = Point(2, 3)
+
+print "P has coordinates (%g, %g)" %(P.x, P.y)
+print "Q has coordinates (%g, %g)" %(Q.x, Q.y)
+
+R = Point(-3, 2)
+
+d = distance(Q,R)
+print "Q and R are distance %g apart" % d
+
+print "R has magnitude %g" % R.magnitude()

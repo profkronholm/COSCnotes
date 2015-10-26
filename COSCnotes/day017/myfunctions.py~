@@ -1,0 +1,18 @@
+# myfunctions.py
+# Bill Kronholm
+# 2015
+#
+# Some functions which are imported to another program
+#
+
+def coinflip(headprob = 0.5):
+    """
+    simulated coin flip. returns 'H' with probability headprob.
+    """
+    if headprob > 1: headprob = 1
+    if headprob < 0: headprob = 0
+    from random import random # random() is a float between 0 and 1
+    if random() < headprob:
+        return 'H'
+    else:
+        return 'T'

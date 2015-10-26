@@ -1,0 +1,45 @@
+# recursion.py
+# Bill Kronholm
+# 2015
+#
+# some simple examples of using recursive functions
+
+# example from section 5.8 of Think Python
+import time
+
+def countdown(n):
+    if n <= 0:
+        print 'Blastoff!'
+    else:
+        print n
+        time.sleep(1) # pause for 1 second
+        countdown(n-1)
+#countdown(10)
+
+# don't write functions like this one!
+def recurseforever(n):
+    print n
+    recurseforever(n+1)
+
+#recurseforever(0) # RuntimeError: maximum recursion depth exceeded
+
+# compute n!
+#def factorial(n):
+#    if n <= 0:
+#        return 0
+#    if n > 1:
+#        return n*factorial(n-1)
+#    return 1
+#    
+#print factorial(10)
+
+## compute binomial coefficients. 
+## "n choose m" = n! / ( (n-m)! * m! )
+#def binom(n,m):
+#    a = factorial(n)
+#    b = factorial(n-m)
+#    c = factorial(m)
+#    return a / (b*c)
+#    
+#print binom(1000,1) # RuntimeError: maximum recursion depth exceeded
+

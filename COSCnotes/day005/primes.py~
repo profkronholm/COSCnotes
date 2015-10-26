@@ -1,0 +1,26 @@
+# primes.py
+# Bill Kronholm
+# 2015
+#
+# A program to find all primes smaller than any given positive integer.
+#
+
+# returns True if n is prime, otherwise returns False.
+# Note: returns True if n = 1 or 0. Fix it!
+def isprime(n):
+    m = 2
+    while m < n:
+        if n % m == 0:
+            return False
+        m = m + 1
+    return True
+    
+myinteger = raw_input('Please enter an integer: ')
+myinteger = int(myinteger)
+
+#listofints = range(myinteger)
+#print listofints
+
+#knownprimes = [2] # used to accumulate prime numbers
+
+print isprime(myinteger)

@@ -1,0 +1,32 @@
+# shrug.py
+# Bill Kronholm
+# 2015
+#
+# Demonstrates usage of chr and ord
+
+# chr returns an 8-bit character, i.e. if i is in range(256), chr(i) works
+
+#for i in range(256):
+#    print chr(i)
+
+# unichr returns a unicode string for values in range(65536)
+
+#for i in range(476,512):
+#    print unichr(i)
+
+# ord is the inverse function to each of these
+#import string
+#for c in string.lowercase:
+#    print ord(c)
+
+print '\n'
+shrug = [175, 92, 95, 40, 12484, 41, 95, 47, 175]
+
+print '\t' + ''.join([unichr(n) for n in shrug])
+
+print '\n\n\n'
+
+table = [40, 9583, 176, 9633, 176, 41, 9583, 65077, 32, 9531, 9473, 9531]
+print '\t' + ''.join([unichr(n) for n in table])
+
+print '\n'
