@@ -31,4 +31,4 @@ R = Point(-3, 2)
 d = distance(Q,R)
 print "Q and R are distance %g apart" % d
 
-print R.magnitude()
+print "R has magnitude %g" % R.magnitude()
